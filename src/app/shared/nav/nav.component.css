@@ -1,4 +1,21 @@
+div.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
 a {
-    margin: 16px;
+    text-decoration: none;
     color: white;
+    padding: 12px;
 }
