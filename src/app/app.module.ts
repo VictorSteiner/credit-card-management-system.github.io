@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PageWrapperComponent } from './shared/page-wrapper/page-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     TransactionPageComponent,
     HomePageComponent,
     NavComponent,
+    PageWrapperComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,21 +7,31 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class SnackBarService {
-  constructor(private snackBar:MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar) { }
 
-  
-  openSnackBarSucces(message: string, action: string) {
+
+  openSnackBarSucces(message: string, action?: string) {
     this.snackBar.open(message, action, {
-      horizontalPosition: 'end',
+      horizontalPosition: 'start',
       verticalPosition: 'bottom',
+      panelClass: ["snackbar", "snackbar-succes"],
       duration: 2000,
     });
   }
 
-  openSnackBarError(message: string, action: string) {
-    this.snackBar.open(message, action,{
-      horizontalPosition: 'end',
+  openSnackBarError(message: string, action?: string) {
+    this.snackBar.open(message, action, {
+      panelClass: ["snackbar", "snackbar-error"],
+      horizontalPosition: 'start',
       verticalPosition: 'bottom',
     });
   }
+
+  openSnackBarWarning(message: string, action?: string) {
+    this.snackBar.open(message, action, {
+      panelClass: ["snackbar", "snackbar-warning"],
+      horizontalPosition: 'start',
+      verticalPosition: 'bottom'
+    })
   }
+}
