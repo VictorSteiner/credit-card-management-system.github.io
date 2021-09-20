@@ -23,7 +23,6 @@ jobs:
       #- name: Test
       #  run: npm run test
       - name: Archive build
-        #if: success()
         uses: actions/upload-artifact@v1
         with:
           name: deploy_dist
@@ -44,4 +43,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: deploy_dist
+          FOLDER: build
