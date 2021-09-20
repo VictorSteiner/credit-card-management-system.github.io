@@ -1,0 +1,32 @@
+div.container {
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+div.header {
+    padding: 12px;
+    width: fit-content;
+}
+
+div.content {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    position: relative;
+    font-size: 42px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+h1::after {
+    display: block;
+    width: 110%;
+    content: '';
+    bottom: -4px;
+    height: 8px;
+    position: absolute;
+    background-color: #185abe;
+}
