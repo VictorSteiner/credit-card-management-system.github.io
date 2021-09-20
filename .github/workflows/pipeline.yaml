@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set-up Node
+        uses: actions/setup@v1
+        with:
+          node-version: "10.x"
+      - run: npm install
+      - run: npm run build
+      # - run: npm test // no test is made yet
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: main
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_REPO_TOKEN}}
+
+
