@@ -9,6 +9,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
