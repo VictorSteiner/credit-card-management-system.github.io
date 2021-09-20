@@ -1,1 +1,33 @@
-<p>home-page works!</p>
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="creditCards$">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element; let i = index;">{{i}}</mat-cell>
+      </ng-container>
+  
+      <!-- Card Number Column -->
+      <ng-container matColumnDef="card_number">
+        <mat-header-cell *matHeaderCellDef> Card Number </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.card_number}}</mat-cell>
+      </ng-container>
+  
+      <!-- Card Name Column -->
+      <ng-container matColumnDef="cardholder_name">
+        <mat-header-cell *matHeaderCellDef> Card Holder Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cardholder_name}} </mat-cell>
+      </ng-container>
+  
+      <!-- issuer Column -->
+      <ng-container matColumnDef="issuer">
+        <mat-header-cell *matHeaderCellDef> Issuer </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.issuer}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        (click)="rowClick(row)"
+        *matRowDef="let row; columns: displayedColumns; let i = index;"></mat-row>
+    </mat-table>
+  </div>
+  
