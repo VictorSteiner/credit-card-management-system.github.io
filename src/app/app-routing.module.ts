@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CreditCardPageComponent } from './pages/credit-card-page/credit-card-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "", component: HomePageComponent },
+  { path: "credit-card", component: CreditCardPageComponent },
+  { path: "transaction", component: TransactionPageComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
