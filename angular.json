@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "credit-card-management-system"
+  "defaultProject": "credit-card-management-system",
+  "cli": {
+    "analytics": "33e1ea56-068f-4243-8d62-708a7b9a1399"
+  }
 }
