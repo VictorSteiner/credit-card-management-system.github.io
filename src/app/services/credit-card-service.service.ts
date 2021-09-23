@@ -12,8 +12,10 @@ import { SnackBarService } from './snackbar.service';
 })
 export class CreditCardService {
   rootUrl = `http://localhost:3000`
-
-  constructor(private snackBarService: SnackBarService,private http: HttpClient) {}
+  credit_cards$: Observable<CreditCard[]>;
+  constructor(private snackBarService: SnackBarService,private http: HttpClient) {
+    this.credit_cards$ = this.getCreditCards();
+  }
 
 
   getCreditCards(): Observable<CreditCard[]> {
