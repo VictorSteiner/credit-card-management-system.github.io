@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
+import { PageWrapperComponent } from './shared/page-wrapper/page-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,13 @@ import {MatTableModule} from '@angular/material/table';
     TransactionPageComponent,
     HomePageComponent,
     NavComponent,
+    PageWrapperComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     HttpClientModule,
     MatSnackBarModule,
