@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import { PageWrapperComponent } from './shared/page-wrapper/page-wrapper.component';
+import { CreditCardDetailsPageComponent } from './pages/credit-card-details-page/credit-card-details-page.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { LuxonModule } from 'luxon-angular';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { PageWrapperComponent } from './shared/page-wrapper/page-wrapper.compone
     HomePageComponent,
     NavComponent,
     PageWrapperComponent,
+    CreditCardDetailsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,8 @@ import { PageWrapperComponent } from './shared/page-wrapper/page-wrapper.compone
     HttpClientModule,
     MatSnackBarModule,
     MatTableModule,
+    MatPaginatorModule,
+    LuxonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
