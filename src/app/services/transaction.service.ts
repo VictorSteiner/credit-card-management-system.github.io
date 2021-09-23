@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators'
-import { Transaction } from '../models/transaction/transaction.model';
+import { Transaction } from '../models/transaction.type';
 import { HttpHandlingService } from './http-handling.service';
 
 @Injectable({
