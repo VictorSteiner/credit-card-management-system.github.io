@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CreditCardDetailsPageComponent } from './pages/credit-card-details-page/credit-card-details-page.component';
-import { CreditCardPageComponent } from './pages/credit-card-page/credit-card-page.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { CreditCardAddComponent } from './credit-card-module/credit-card-add/credit-card-add.component';
 import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
 
 const routes: Routes = [
-  { path: "", component: HomePageComponent },
-  { path: "credit-card", component: CreditCardPageComponent },
+  { path: "", loadChildren: () => import('./credit-card-module/credit-card.module').then(m => m.CreditCardModule), },
+  { path: "add-credit-card", component: CreditCardAddComponent },
   { path: "transaction", component: TransactionPageComponent },
-  { path: "credit-card/:id", component: CreditCardDetailsPageComponent}
 ];
 
 @NgModule({

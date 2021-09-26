@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "644b8cd3-2a9d-484f-885f-51a047d5ea8f"
+    "analytics": "33e1ea56-068f-4243-8d62-708a7b9a1399"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,7 +97,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -131,8 +131,5 @@
       }
     }
   },
-  "defaultProject": "credit-card-management-system",
-  "cli": {
-    "analytics": "33e1ea56-068f-4243-8d62-708a7b9a1399"
-  }
+  "defaultProject": "credit-card-management-system"
 }

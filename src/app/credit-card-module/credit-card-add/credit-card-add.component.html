@@ -1,0 +1,58 @@
+<app-page-wrapper title="Add a new card">
+    <div class="container" style="width: 100%;"> 
+        <form [formGroup]="formGroup" class="form" (ngSubmit)="onSubmit(formGroup.value)">
+            <div class="form-element">
+                <mat-form-field appearance="fill" class="form-element">
+                    <mat-label>Card number*</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="card_number">
+                    <mat-hint>Length between 7 and 16 and only numbers</mat-hint>
+                    <mat-error>{{ errorCardNumber }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-element">
+                <mat-form-field appearance="fill" class="form-element">
+                    <mat-label>Cardholder Name*</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="cardholder_name">
+                    <mat-error>{{ errorRequired("cardholder_name") }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-element">
+                <mat-form-field appearance="fill" class="form-element">
+                    <mat-label>CSC code*</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="csc_code">
+                    <mat-hint>Length of 3 and only numbers</mat-hint>
+
+                    <mat-error>{{ errorCsc }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-element">
+                <mat-form-field appearance="fill" class="form-element">
+                    <mat-label>Expiration month*</mat-label>
+                    <mat-select formControlName="expiration_date_month">
+                        <mat-option *ngFor="let i of 12 | createArrayOfValues" [value]="i">{{i}}</mat-option>
+                    </mat-select>
+                    <mat-error>{{ errorMonth }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-element">
+                <mat-form-field appearance="fill" class="form-element">
+                    <mat-label>Expiration year*</mat-label>
+                    <mat-select formControlName="expiration_date_year">
+                        <mat-option *ngFor="let i of 31 | createArrayOfValues" [value]="i">{{i}}</mat-option>
+                    </mat-select>
+                    <mat-error>{{ errorYear }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-element">
+                <mat-form-field appearance="fill" class="form-element">
+                    <mat-label>Issuer*</mat-label>
+                    <input matInput type="text" class="form-control" formControlName="issuer">
+                    <mat-error>{{ errorRequired("issuer") }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-element">
+                <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
+            </div>
+        </form>
+    </div>
+</app-page-wrapper>

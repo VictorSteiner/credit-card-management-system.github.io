@@ -20,16 +20,23 @@ export class CreditCardService {
 
   getCreditCards(): Observable<CreditCard[]> {
     return this.http.get<CreditCard[]>(`${this.rootUrl}/credit_cards`).pipe(
-      tap(() => this.snackBarService.openSnackBarSucces("succeeded")),
+      tap(() => this.snackBarService.openSnackBarSucces("Succeeded")),
       catchError(this.handleError)
     )
   }
 
   createCreditCard(creditCard: CreditCard) {
-    this.http.post<CreditCardResult>(`${this.rootUrl}/credit_cards`, creditCard).pipe(
-      tap(() => this.snackBarService.openSnackBarSucces("succeeded")),
-      catchError(this.handleError)
-      )
+    this.http.post<any>(`${this.rootUrl}/credit_cards`, creditCard).subscribe(
+      // Succeeds when there is a response; ignore other events
+      res => {this.snackBarService.openSnackBarSucces("Succeeded")
+    console.log(res)          
+    },
+      // Operation failed; error is an HttpErrorResponse
+      error => this.handleError(error)
+      
+    );
+
+      
   }
 
   private handleError(error: HttpErrorResponse) {

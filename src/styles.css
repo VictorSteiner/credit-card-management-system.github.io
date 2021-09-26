@@ -6,3 +6,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .snackbar-succes { background-color: green; }
 .snackbar-error { background-color: red; }
 .snackbar-warning { background-color: orange; }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";

@@ -13,23 +13,13 @@ import { CreditCardService } from 'src/app/services/credit-card-service.service'
 })
 export class HomePageComponent implements OnInit {
 
-  creditCards$ : Observable<CreditCard[]> | null = null;
-  displayedColumns: string[] = ['position','card_number', 'cardholder_name', 'issuer']
-  dataSource = new MatTableDataSource()
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor(private creditCardService : CreditCardService, private router: Router) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.creditCardService.credit_cards$.subscribe(creditCards => {this.dataSource.data = creditCards});
+    
   }
   
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-
-  rowClick(id: number): void {
-    this.router.navigate(['/credit-card', id]);
-  }
+  
 
 }

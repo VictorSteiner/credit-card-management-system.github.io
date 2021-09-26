@@ -1,21 +1,20 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { CreditCard } from 'src/app/models/credit-card.type';
 import { Transaction } from 'src/app/models/transaction.type';
 import { CreditCardService } from 'src/app/services/credit-card-service.service';
-
 import { TransactionService } from 'src/app/services/transaction.service';
 
 @Component({
-  selector: 'app-credit-card-details-page',
-  templateUrl: './credit-card-details-page.component.html',
-  styleUrls: ['./credit-card-details-page.component.css']
+  selector: 'app-credit-card-list-item',
+  templateUrl: './credit-card-list-item.component.html',
+  styleUrls: ['./credit-card-list-item.component.css']
 })
-export class CreditCardDetailsPageComponent implements OnInit {
+export class CreditCardListItemComponent implements OnInit {
 
   creditCard$ : Observable<CreditCard[]>;
   transactions$: Observable<Transaction[]>;
@@ -49,5 +48,3 @@ export class CreditCardDetailsPageComponent implements OnInit {
   }
 
 }
-
-
