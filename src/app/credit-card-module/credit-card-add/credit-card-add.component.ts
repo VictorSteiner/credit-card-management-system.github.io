@@ -44,18 +44,20 @@ export class CreditCardAddComponent implements OnInit {
   createForm() {
     this.formGroup = this.fb.group({
       'card_number': ['',[Validators.required, Validators.minLength(7),Validators.maxLength(16),Validators.pattern('^[0-9]*$')]],
-      'cardholder_name': ['',[Validators.required]],
+      'cardholder_name': ['',[Validators.required, Validators.pattern('^[a-zA-Z\s]*$')]],
       'csc_code': ['',[Validators.required, Validators.minLength(3),Validators.maxLength(3),Validators.pattern('^[0-9]*$')]],
       'expiration_date_month': ['',[Validators.required, Validators.min(1), Validators.max(12),Validators.pattern('^[0-9]*$')]],
       'expiration_date_year': ['',[Validators.required, Validators.min(1),Validators.max(31),Validators.pattern('^[0-9]*$')]],
-      'issuer': ['',[Validators.required]]
+      'issuer': ['',[Validators.required, Validators.pattern('^[a-zA-Z\s]*$')]]
     });
   }
 
   errorRequired(name: string) : string {
     const form: FormControl = (this.formGroup.get(name) as FormControl);
     return form.hasError('required') ?
-      'Field is required' : '';
+      'Field is required' :
+      form.hasError('pattern') ?
+      'Card number only accepts letters' : '';
  }
 
   get errorCardNumber() : string {
