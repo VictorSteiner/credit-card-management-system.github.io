@@ -7,8 +7,8 @@
     "build": "ng build",
     "build:ci": "ng build --prod --sourceMap=false --base-href /credit-card-management-system.github.io/",
     "test": "ng test",
-    "format:fix": "prettier --config .prettierrc --write src/**/*.ts",
-    "format:check": "prettier --config .prettierrc --check src/**/*.ts",
+    "format:fix": "prettier --config .prettierrc --write src/**/*.{ts,css,html}",
+    "format:check": "prettier --config .prettierrc --check src/**/*.{ts,css,html}",
     "precommit": "npm run format:check && ng lint",
     "precommit:fix": "npm run format:fix && ng lint --fix",
     "lint": "ng lint",
@@ -32,7 +32,7 @@
     "luxon": "^2.0.2",
     "luxon-angular": "^4.0.0",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
+    "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
