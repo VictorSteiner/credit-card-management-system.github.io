@@ -33,7 +33,6 @@
 				</mat-cell>
 			</ng-container>
 
-  
   <app-page-wrapper title="Transactions">
     <div class="demo-table mat-elevation-z8" >
         <mat-table #table [dataSource]="dataSource" matSort>
@@ -42,27 +41,24 @@
             <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.date | milsToDate }} </mat-cell>
           </ng-container>
-    
           <!-- Amount -->
           <ng-container matColumnDef="amount">
             <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
           </ng-container>
-  
           <!-- Currency -->
           <ng-container matColumnDef="currency">
               <mat-header-cell *matHeaderCellDef> Currency </mat-header-cell>
               <mat-cell *matCellDef="let element"> {{element.currency}} </mat-cell>
             </ng-container>
-  
             <!-- Commnet -->
           <ng-container matColumnDef="comment">
               <mat-header-cell *matHeaderCellDef> Comment </mat-header-cell>
               <mat-cell *matCellDef="let element"> {{element.comment}} </mat-cell>
             </ng-container>
-  
-            
-    
+
+
+
           <mat-header-row *matHeaderRowDef="displayedColumnsTransaction"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumnsTransaction; let i = index;"></mat-row>
         </mat-table>
