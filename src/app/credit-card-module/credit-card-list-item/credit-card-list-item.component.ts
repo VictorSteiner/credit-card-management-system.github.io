@@ -30,7 +30,7 @@ export class CreditCardListItemComponent implements OnInit {
   ngOnInit(): void {
     const id : number = Number.parseInt(this.route.snapshot.paramMap.get('id'));
 
-    this.creditCard$ = this.creditCardService.credit_cards$.pipe(
+    this.creditCard$ = this.creditCardService.creditCards$.pipe(
       map(items => items.filter(item => item.card_number === id))
     );
 

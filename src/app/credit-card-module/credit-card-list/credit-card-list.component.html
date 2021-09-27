@@ -24,14 +24,17 @@
         <mat-cell *matCellDef="let element"> {{element.issuer}} </mat-cell>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row
-        (click)="rowClick(row.card_number)"
-        *matRowDef="let row; columns: displayedColumns; let i = index;"></mat-row>
-    </mat-table>
+		<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		<mat-row
+			(click)="rowClick(row.card_number)"
+			*matRowDef="let row; columns: displayedColumns; let i = index"
+		></mat-row>
+	</mat-table>
 
-    <mat-paginator [pageSizeOptions]="[10, 15, 20]"
-                 showFirstLastButtons 
-                 aria-label="Select page of periodic elements">
-        </mat-paginator>
-  </div>
+	<mat-paginator
+		[pageSizeOptions]="[10, 15, 20]"
+		showFirstLastButtons
+		aria-label="Select page of periodic elements"
+	>
+	</mat-paginator>
+</div>

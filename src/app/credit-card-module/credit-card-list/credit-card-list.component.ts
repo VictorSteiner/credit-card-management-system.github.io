@@ -23,7 +23,7 @@ export class CreditCardListComponent implements OnInit {
   constructor(private creditCardService : CreditCardService, private router: Router) { }
 
   ngOnInit(): void {
-    this.creditCardService.credit_cards$.subscribe(creditCards => {this.dataSource.data = creditCards});
+    this.creditCardService.creditCards$.subscribe(creditCards => {this.dataSource.data = creditCards});
   }
   
   ngAfterViewInit() {

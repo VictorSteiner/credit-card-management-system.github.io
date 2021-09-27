@@ -1,5 +1,1 @@
-{
-    "endOfLine": "cr",
-    "useTabs": true,
-    "singleQuote": true
-}
+{	"trailingComma": "es5",	"endOfLine": "cr",	"useTabs": true,	"tabWidth": 1,	"singleQuote": true,	"bracketSpacing": true}

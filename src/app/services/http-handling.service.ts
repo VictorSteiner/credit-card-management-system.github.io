@@ -1,21 +1,1 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { SnackBarService } from './snackbar.service';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class HttpHandlingService {
-
-  constructor(private snackbarService: SnackBarService) { }
-
-  handleSucces() {
-    this.snackbarService.openSnackBarSucces("Succes");
-  }
-
-  handleError(error: HttpErrorResponse) {
-    this.snackbarService.openSnackBarError(`${error.status}: ${error.statusText}`, "X");
-    return of({ ...error });
-  }
-}
+import { HttpErrorResponse } from '@angular/common/http';import { Injectable } from '@angular/core';import { Observable, of } from 'rxjs';import { CreditCard } from '../models/credit-card.type';import { Transaction } from '../models/transaction.type';import { SnackBarService } from './snackbar.service';@Injectable({	providedIn: 'root',})export class HttpHandlingService<T extends Transaction | CreditCard> {	constructor(private snackbarService: SnackBarService) {}	handleSucces(): void {		this.snackbarService.openSnackBarSucces('Succes');	}	handleError(error: HttpErrorResponse): Observable<T> {		this.snackbarService.openSnackBarError(			`${error.status}: ${error.statusText}`,			'X'		);		return;	}}
