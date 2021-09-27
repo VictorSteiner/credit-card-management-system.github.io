@@ -22,3 +22,5 @@ jobs:
      run: npm install
    - name: Check
      run: npm run precommit
+   - name: Build
+     run: npm run build:ci
