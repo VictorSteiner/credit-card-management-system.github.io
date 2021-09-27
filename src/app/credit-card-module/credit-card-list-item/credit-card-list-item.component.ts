@@ -38,9 +38,6 @@ export class CreditCardListItemComponent implements OnInit {
       map(items => items.filter(item => item.credit_card.card_number === id))
       
     ).subscribe(items => {this.dataSource.data = items})
-    
-    
-    
   }
 
   ngAfterViewInit() {

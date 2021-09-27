@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -18,6 +19,7 @@ export class CreditCardListComponent implements OnInit {
   dataSource = new MatTableDataSource()
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+   @ViewChild(MatSort) sort: MatSort
   constructor(private creditCardService : CreditCardService, private router: Router) { }
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class CreditCardListComponent implements OnInit {
   
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   rowClick(id: number): void {

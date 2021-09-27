@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { CreditCardRoutingModule } from './credit-card-routing.module';
 import { CreditCardListItemComponent } from './credit-card-list-item/credit-card-list-item.component';
 import { CreditCardAddComponent } from './credit-card-add/credit-card-add.component';
@@ -19,6 +18,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { CreateArrayOfValuesPipe } from '../pipe/create-array-of-values.pipe';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -28,7 +28,6 @@ import { CreateArrayOfValuesPipe } from '../pipe/create-array-of-values.pipe';
     CommonModule,
     CreditCardRoutingModule,
     MatTableModule,
-    MatPaginatorModule,
     MatPaginatorModule,
     SharedModule,
     FormsModule,
@@ -40,7 +39,8 @@ import { CreateArrayOfValuesPipe } from '../pipe/create-array-of-values.pipe';
     MatCardModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSortModule
   ],
   exports: [CreditCardListItemComponent, CreditCardAddComponent, CreditCardListComponent]
 })

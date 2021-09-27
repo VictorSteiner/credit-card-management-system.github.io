@@ -1,5 +1,5 @@
 <div class="demo-table mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource">
+    <mat-table #table [dataSource]="dataSource" matSort>
       <!-- Position Column -->
       <ng-container matColumnDef="position">
         <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
@@ -8,19 +8,19 @@
 
       <!-- Card Number Column -->
       <ng-container matColumnDef="card_number">
-        <mat-header-cell *matHeaderCellDef> Card Number </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Card Number </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.card_number}}</mat-cell>
       </ng-container>
 
       <!-- Card Name Column -->
       <ng-container matColumnDef="cardholder_name">
-        <mat-header-cell *matHeaderCellDef> Card Holder Name </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Card Holder Name </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.cardholder_name}} </mat-cell>
       </ng-container>
 
       <!-- issuer Column -->
       <ng-container matColumnDef="issuer">
-        <mat-header-cell *matHeaderCellDef> Issuer </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Issuer </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.issuer}} </mat-cell>
       </ng-container>
 

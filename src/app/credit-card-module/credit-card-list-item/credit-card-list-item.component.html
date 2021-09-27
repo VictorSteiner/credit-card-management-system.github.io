@@ -43,9 +43,10 @@
     </div>
   </app-page-wrapper>
 
+  
   <app-page-wrapper title="Transactions">
-    <div class="demo-table mat-elevation-z8">
-        <mat-table #table [dataSource]="dataSource">
+    <div class="demo-table mat-elevation-z8" >
+        <mat-table #table [dataSource]="dataSource" matSort>
           <!-- Date -->
           <ng-container matColumnDef="date">
             <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
