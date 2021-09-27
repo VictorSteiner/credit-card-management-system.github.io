@@ -7,7 +7,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { LuxonModule } from 'luxon-angular';
-import { AddCreditCardPageComponent } from './pages/add-credit-card-page/add-credit-card-page.component';
 import { CreditCardModule } from './credit-card-module/credit-card.module';
 import { SharedModule } from './shared/shared.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -16,7 +15,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
-    AddCreditCardPageComponent,
     TransactionPageComponent,
     HomePageComponent,
   ],
