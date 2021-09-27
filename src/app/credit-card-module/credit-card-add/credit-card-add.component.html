@@ -48,11 +48,9 @@
 				<mat-form-field appearance="fill" class="form-element">
 					<mat-label>Expiration month*</mat-label>
 					<mat-select formControlName="expiration_date_month">
-						<mat-option
-							*ngFor="let i of 12 | createArrayOfValues"
-							[value]="i"
-							>{{ i }}</mat-option
-						>
+						<mat-option *ngFor="let i of 12 | createArrayOfValues" [value]="i">{{
+							i
+						}}</mat-option>
 					</mat-select>
 					<mat-error>{{ errorMonth }}</mat-error>
 				</mat-form-field>
@@ -61,11 +59,9 @@
 				<mat-form-field appearance="fill" class="form-element">
 					<mat-label>Expiration year*</mat-label>
 					<mat-select formControlName="expiration_date_year">
-						<mat-option
-							*ngFor="let i of 31 | createArrayOfValues"
-							[value]="i"
-							>{{ i }}</mat-option
-						>
+						<mat-option *ngFor="let i of 31 | createArrayOfValues" [value]="i">{{
+							i
+						}}</mat-option>
 					</mat-select>
 					<mat-error>{{ errorYear }}</mat-error>
 				</mat-form-field>

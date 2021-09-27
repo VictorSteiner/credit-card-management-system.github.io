@@ -1,25 +1,25 @@
 div.container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 div.nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 img:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 a {
-    text-decoration: none;
-    color: white;
-    padding: 12px;
+	text-decoration: none;
+	color: white;
+	padding: 12px;
 }
 
 .mat-toolbar {
-    background-color: black;
+	background-color: black;
 }
