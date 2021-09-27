@@ -14,14 +14,14 @@ export class SnackBarService {
     this.snackBar.open(message, action, {
       horizontalPosition: 'start',
       verticalPosition: 'bottom',
-      panelClass: ["snackbar", "snackbar-succes"],
+      panelClass: ['snackbar', 'snackbar-succes'],
       duration: 2000,
     });
   }
 
   openSnackBarError(message: string, action?: string) {
     this.snackBar.open(message, action, {
-      panelClass: ["snackbar", "snackbar-error"],
+      panelClass: ['snackbar', 'snackbar-error'],
       horizontalPosition: 'start',
       verticalPosition: 'bottom',
     });
@@ -29,9 +29,9 @@ export class SnackBarService {
 
   openSnackBarWarning(message: string, action?: string) {
     this.snackBar.open(message, action, {
-      panelClass: ["snackbar", "snackbar-warning"],
+      panelClass: ['snackbar', 'snackbar-warning'],
       horizontalPosition: 'start',
       verticalPosition: 'bottom'
-    })
+    });
   }
 }

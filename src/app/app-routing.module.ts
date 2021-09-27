@@ -4,13 +4,19 @@ import { CreditCardAddComponent } from './credit-card-module/credit-card-add/cre
 import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
 
 const routes: Routes = [
-  { path: "", loadChildren: () => import('./credit-card-module/credit-card.module').then(m => m.CreditCardModule), },
-  { path: "add-credit-card", component: CreditCardAddComponent },
-  { path: "transaction", component: TransactionPageComponent },
+	{
+		path: '',
+		loadChildren: () =>
+			import('./credit-card-module/credit-card.module').then(
+				(m) => m.CreditCardModule
+			),
+	},
+	{ path: 'add-credit-card', component: CreditCardAddComponent },
+	{ path: 'transaction', component: TransactionPageComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+	exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

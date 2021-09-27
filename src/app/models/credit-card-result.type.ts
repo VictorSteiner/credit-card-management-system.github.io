@@ -1,4 +1,4 @@
 export interface CreditCardResult {
-	date: Date,
-	message: string
+	date: Date;
+	message: string;
 }

@@ -1,4 +1,4 @@
-import { CreditCard } from "./credit-card.type";
+import { CreditCard } from './credit-card.type';
 
 export interface Transaction {
 	credit_card: CreditCard;
@@ -8,11 +8,4 @@ export interface Transaction {
 	currency: string;
 }
 
-export const CURRENCIES = [
-	'CAD',
-	'EUR',
-	'KYD',
-	'MWK',
-	'NAD',
-	'USD',
-]
+export const CURRENCIES = ['CAD', 'EUR', 'KYD', 'MWK', 'NAD', 'USD'];

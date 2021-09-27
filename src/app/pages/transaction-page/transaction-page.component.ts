@@ -10,7 +10,7 @@ import { TransactionService } from 'src/app/services/transaction.service';
   styleUrls: ['./transaction-page.component.css']
 })
 export class TransactionPageComponent implements OnInit {
-  transactions$: Observable<Transaction[]>
+  transactions$: Observable<Transaction[]>;
 
   constructor(private transactionService: TransactionService) { }
 
