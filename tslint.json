@@ -11,7 +11,7 @@
 		"deprecation": {
 			"severity": "warning"
 		},
-		"eofline": true,
+		"eofline": false,
 		"import-blacklist": [true, "rxjs/Rx"],
 		"import-spacing": true,
 		"indent": [true, "tabs", 1],
