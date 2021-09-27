@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "644b8cd3-2a9d-484f-885f-51a047d5ea8f"
+    "analytics": "33e1ea56-068f-4243-8d62-708a7b9a1399"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -43,7 +43,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -71,6 +70,10 @@
           "configurations": {
             "production": {
               "browserTarget": "credit-card-management-system:build:production"
+            },
+            "development": {
+              "browserTarget": "credit-card-management-system:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
@@ -92,7 +95,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

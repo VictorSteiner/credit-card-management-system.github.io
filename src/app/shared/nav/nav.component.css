@@ -19,3 +19,7 @@ a {
     color: white;
     padding: 12px;
 }
+
+.mat-toolbar {
+    background-color: black;
+}
