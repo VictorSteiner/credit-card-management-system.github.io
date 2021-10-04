@@ -42,7 +42,7 @@
       </ng-container>
 
       <ng-container matColumnDef="delete" >
-        <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
         <mat-cell *matCellDef="let element; let i = index" (click)="$event.stopPropagation()">
           <mat-icon (click)="transactionDelete(element.credit_card.card_number)">delete forever</mat-icon>
         </mat-cell>
@@ -52,7 +52,6 @@
 
       <mat-header-row *matHeaderRowDef="displayedColumnsTransaction"></mat-header-row>
       <mat-row
-        (click)="rowClick(row.credit_card.card_number)"
        *matRowDef="let row; columns: displayedColumnsTransaction; let i = index"></mat-row>
     </mat-table>
 

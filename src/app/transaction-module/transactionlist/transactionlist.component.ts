@@ -48,13 +48,7 @@ export class TransactionlistComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort
 	}
 
-  rowClick(id: number): void {
 
-    if (!this.id) {
-      this.router.navigate(['/credit-card', id]);
-    }
-
-	}
 
   transactionDelete(id: number): void {
 
