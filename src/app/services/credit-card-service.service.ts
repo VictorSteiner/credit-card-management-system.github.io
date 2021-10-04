@@ -15,11 +15,11 @@ export class CreditCardService {
 		private snackBarService: SnackBarService,
 		private http: HttpClient
 	) {
-		this.creditCards$ = this.getCreditCards();
+		this.getCreditCards();
 	}
 
-	getCreditCards(): Observable<CreditCard[]> {
-		return this.http.get<CreditCard[]>(`${this.rootUrl}/credit_cards`).pipe(
+	getCreditCards(): void {
+		this.creditCards$ = this.http.get<CreditCard[]>(`${this.rootUrl}/credit_cards`).pipe(
 			tap(() => this.snackBarService.openSnackBarSucces('Succeeded')),
 			catchError(this.handleError)
 		);
@@ -38,15 +38,18 @@ export class CreditCardService {
 	}
 
   deleteCreditCard(creditCardNumber: number): void {
-		this.http.delete(`${this.rootUrl}/credit_cards/${creditCardNumber}`).subscribe(
+		this.http.delete(`${this.rootUrl}/credit_cards/${creditCardNumber}`)
+    .subscribe(
 			// Succeeds when there is a response; ignore other events
 			(res) => {
 				this.snackBarService.openSnackBarSucces('Succeeded');
 				console.log(res);
+        this.getCreditCards()
 			},
 			// Operation failed; error is an HttpErrorResponse
 			(error) => this.handleError(error)
 		);
+
 	}
 
 	private handleError(error: HttpErrorResponse): Observable<CreditCard[]> {

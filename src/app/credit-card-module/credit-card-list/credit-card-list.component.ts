@@ -34,6 +34,7 @@ export class CreditCardListComponent implements OnInit, AfterViewInit {
 		this.creditCardService.creditCards$.subscribe((creditCards) => {
 			this.dataSource.data = creditCards;
 		});
+    this.dataSource._updateChangeSubscription()
 	}
 
 	ngAfterViewInit(): void {
@@ -45,9 +46,9 @@ export class CreditCardListComponent implements OnInit, AfterViewInit {
 		this.router.navigate(['/credit-card', id]);
 	}
 
-  cardDelete(id: number): void {
-
-    console.log(id)
-
+  cardDelete(id: number, index: number): void {
+    this.creditCardService.deleteCreditCard(id)
+    this.dataSource.data = this.dataSource.data.filter((item : CreditCard) => item.card_number != id)
+    this.dataSource._updateChangeSubscription()
 	}
 }

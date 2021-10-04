@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CreditCard } from 'src/app/models/credit-card.type';
@@ -27,7 +27,8 @@ export class CreditCardListItemComponent implements OnInit {
 
 	constructor(
 		private route: ActivatedRoute,
-		private creditCardService: CreditCardService
+		private creditCardService: CreditCardService,
+    private router: Router
 	) {}
 
 	ngOnInit(): void {
@@ -40,6 +41,12 @@ export class CreditCardListItemComponent implements OnInit {
 			map((items) => items.filter((item) => item.card_number === this.id))
 		);
 	}
+
+  cardDelete(): void {
+    this.creditCardService.deleteCreditCard(this.id)
+		this.router.navigate(['/']);
+	}
+
 
 
 }

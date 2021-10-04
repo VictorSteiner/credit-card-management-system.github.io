@@ -1,5 +1,6 @@
 <app-page-wrapper title="Card details">
 	<div class="demo-table mat-elevation-z8">
+    <button mat-button style="right: -90%;" color="accent" (click)="cardDelete()">Delete card</button>
 		<mat-table #table [dataSource]="creditCard$">
 			<!-- Card Number Column -->
 			<ng-container matColumnDef="card_number">
