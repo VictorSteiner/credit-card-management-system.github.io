@@ -1,55 +1,1 @@
-<app-page-wrapper title="Card details">
-	<div class="demo-table mat-elevation-z8">
-    <button mat-button style="right: -90%;" color="accent" (click)="cardDelete()">Delete card</button>
-		<mat-table #table [dataSource]="creditCard$">
-			<!-- Card Number Column -->
-			<ng-container matColumnDef="card_number">
-				<mat-header-cell *matHeaderCellDef> Card Number </mat-header-cell>
-				<mat-cell *matCellDef="let element"> {{ element.card_number }}</mat-cell>
-			</ng-container>
-
-			<!-- Card Name Column -->
-			<ng-container matColumnDef="cardholder_name">
-				<mat-header-cell *matHeaderCellDef> Card Holder Name </mat-header-cell>
-				<mat-cell *matCellDef="let element">
-					{{ element.cardholder_name }}
-				</mat-cell>
-			</ng-container>
-
-			<!-- CSC code -->
-			<ng-container matColumnDef="csc_code">
-				<mat-header-cell *matHeaderCellDef> CSC code </mat-header-cell>
-				<mat-cell *matCellDef="let element"> {{ element.csc_code }} </mat-cell>
-			</ng-container>
-
-			<!-- Card expiration month -->
-			<ng-container matColumnDef="expiration_date_month">
-				<mat-header-cell *matHeaderCellDef> Card expiration month </mat-header-cell>
-				<mat-cell *matCellDef="let element">
-					{{ element.expiration_date_month }}
-				</mat-cell>
-			</ng-container>
-
-			<!-- Card expiration year -->
-			<ng-container matColumnDef="expiration_date_year">
-				<mat-header-cell *matHeaderCellDef> Card expiration year </mat-header-cell>
-				<mat-cell *matCellDef="let element">
-					{{ element.expiration_date_year }}
-				</mat-cell>
-			</ng-container>
-
-			<!-- issuer Column -->
-			<ng-container matColumnDef="issuer">
-				<mat-header-cell *matHeaderCellDef> Issuer </mat-header-cell>
-				<mat-cell *matCellDef="let element"> {{ element.issuer }} </mat-cell>
-			</ng-container>
-
-			<mat-header-row *matHeaderRowDef="displayedColumnsCard"></mat-header-row>
-			<mat-row
-				*matRowDef="let row; columns: displayedColumnsCard; let i = index"
-			></mat-row>
-		</mat-table>
-	</div>
-</app-page-wrapper>
-
-<app-transactionlist [id]="id"></app-transactionlist>
+<app-page-wrapper title="Card details">	<div class="demo-table mat-elevation-z8">		<button mat-button style="right: -90%" color="accent" (click)="cardDelete()">			Delete card		</button>		<mat-table #table [dataSource]="creditCard$">			<!-- Card Number Column -->			<ng-container matColumnDef="card_number">				<mat-header-cell *matHeaderCellDef> Card Number </mat-header-cell>				<mat-cell *matCellDef="let element"> {{ element.card_number }}</mat-cell>			</ng-container>			<!-- Card Name Column -->			<ng-container matColumnDef="cardholder_name">				<mat-header-cell *matHeaderCellDef> Card Holder Name </mat-header-cell>				<mat-cell *matCellDef="let element">					{{ element.cardholder_name }}				</mat-cell>			</ng-container>			<!-- CSC code -->			<ng-container matColumnDef="csc_code">				<mat-header-cell *matHeaderCellDef> CSC code </mat-header-cell>				<mat-cell *matCellDef="let element"> {{ element.csc_code }} </mat-cell>			</ng-container>			<!-- Card expiration month -->			<ng-container matColumnDef="expiration_date_month">				<mat-header-cell *matHeaderCellDef> Card expiration month </mat-header-cell>				<mat-cell *matCellDef="let element">					{{ element.expiration_date_month }}				</mat-cell>			</ng-container>			<!-- Card expiration year -->			<ng-container matColumnDef="expiration_date_year">				<mat-header-cell *matHeaderCellDef> Card expiration year </mat-header-cell>				<mat-cell *matCellDef="let element">					{{ element.expiration_date_year }}				</mat-cell>			</ng-container>			<!-- issuer Column -->			<ng-container matColumnDef="issuer">				<mat-header-cell *matHeaderCellDef> Issuer </mat-header-cell>				<mat-cell *matCellDef="let element"> {{ element.issuer }} </mat-cell>			</ng-container>			<mat-header-row *matHeaderRowDef="displayedColumnsCard"></mat-header-row>			<mat-row				*matRowDef="let row; columns: displayedColumnsCard; let i = index"			></mat-row>		</mat-table>	</div></app-page-wrapper><app-transactionlist [id]="id"></app-transactionlist>
