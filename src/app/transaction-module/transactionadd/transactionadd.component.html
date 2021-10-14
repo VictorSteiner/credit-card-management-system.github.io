@@ -1,1 +1,57 @@
-<div style="right: 0; top: -10px">	<button mat-button color="primary" style="background-color: burlywood">		Primary	</button></div>
+<div class="container">
+	<form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup)" class="form">
+		<div class="form-element">
+			<mat-form-field appearance="fill">
+				<mat-label>Creditcardnumber</mat-label>
+				<input
+					matInput
+					placeholder="Creditcard"
+					formControlName="creditCardNumber"
+				/>
+				<mat-error> Error! </mat-error>
+			</mat-form-field>
+		</div>
+
+		<div class="form-element">
+			<mat-form-field appearance="fill">
+				<mat-label for="amount">Amount</mat-label>
+				<input matInput placeholder="Amount" formControlName="amount" />
+			</mat-form-field>
+		</div>
+
+		<div class="form-element">
+			<mat-form-field appearance="fill">
+				<mat-label for="comment">Comment</mat-label>
+				<input matInput placeholder="Comment" formControlName="comment" />
+			</mat-form-field>
+		</div>
+
+		<div class="form-element">
+			<mat-form-field appearance="fill">
+				<mat-label for="date">Date</mat-label>
+				<input matInput type="date" formControlName="date" />
+			</mat-form-field>
+		</div>
+
+		<div class="form-element">
+			<mat-form-field appearance="fill">
+				<mat-label for="currency">Currency</mat-label>
+				<mat-select formControlName="currency">
+					<mat-option *ngFor="let cur of currencies" [value]="cur">{{
+						cur
+					}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+
+		<button
+			mat-raised-button
+			color="primary"
+			type="submit"
+			class="form-element"
+			[disabled]="!formGroup.valid"
+		>
+			Submit
+		</button>
+	</form>
+</div>
