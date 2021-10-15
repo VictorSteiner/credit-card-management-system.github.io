@@ -1,6 +1,11 @@
 <app-page-wrapper title="Transactions">
 	<div style="display: flex; flex-direction: column; align-content: center">
-		<app-transactionadd *ngIf="!id"></app-transactionadd>
+		<app-transactionadd *ngIf="!id" (Add)="update($event)"></app-transactionadd>
+    <div fxLayout fxLayoutAlign="center center">
+      <mat-form-field fxFlex="40%">
+        <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
 		<div class="demo-table mat-elevation-z8">
 			<mat-table #table [dataSource]="dataSource" matSort>
 				<!-- Date -->
@@ -57,7 +62,7 @@
 						*matCellDef="let element; let i = index"
 						(click)="$event.stopPropagation()"
 					>
-						<mat-icon (click)="transactionDelete(element.credit_card.card_number)"
+						<mat-icon (click)="transactionDelete(element.uid)"
 							>delete forever</mat-icon
 						>
 					</mat-cell>
@@ -67,7 +72,6 @@
 					*matHeaderRowDef="displayedColumnsTransaction"
 				></mat-header-row>
 				<mat-row
-					(click)="rowClick(row.credit_card.card_number)"
 					*matRowDef="let row; columns: displayedColumnsTransaction; let i = index"
 				></mat-row>
 			</mat-table>

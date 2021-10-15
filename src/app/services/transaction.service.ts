@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Transaction } from '../models/transaction.type';
 import { HttpHandlingService } from './http-handling.service';
+import { SnackBarService } from './snackbar.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -14,7 +15,8 @@ export class TransactionService {
 
 	constructor(
 		private httpClient: HttpClient,
-		private httpHandling: HttpHandlingService<Transaction>
+		private httpHandling: HttpHandlingService<Transaction>,
+    private snackBarService : SnackBarService
 	) {
 		this.getTransactions();
 	}
@@ -26,15 +28,15 @@ export class TransactionService {
 	}
 
 	postTransaction(transaction: Transaction): void {
-		this.httpClient.post<Transaction>(`${this.url}`, transaction).pipe(
-			tap((t: Transaction) => {
-				this.getTransactions();
-				this.httpHandling.handleSucces();
-			}),
-			catchError((e: HttpErrorResponse): Observable<Transaction> => {
-				return this.httpHandling.handleError(e);
-			})
-		);
+		this.httpClient.post<Transaction>(`${this.url}`, transaction).subscribe(
+      (res) => {
+				this.snackBarService.openSnackBarSucces('Succeeded');
+        this.getTransactions();
+				console.log(res);
+			},
+			// Operation failed; error is an HttpErrorResponse
+			(error) => this.handleError(error)
+    )
 	}
 
 	deleteTransaction(uid: string): void {
@@ -48,4 +50,12 @@ export class TransactionService {
 			(error) => this.httpHandling.handleError(error)
 		);
 	}
+
+  private handleError(error: HttpErrorResponse): Observable<Transaction[]> {
+		this.snackBarService.openSnackBarError(
+			`Failed with error: ${error.status}`,
+			'close'
+		);
+      return;
+    }
 }
